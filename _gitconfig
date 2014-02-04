@@ -1,0 +1,9 @@
+[user]
+	name = Biju Punalor
+	email = biju.punalor@gmail.com
+[github]
+	user = bijupunalor
+	token = 49922579e39a09a5c974c03a49614986
+	gist-oauth-token = 9ba165e
+[core]
+	excludesfile = /home/bijumon/.gitignore_global
