@@ -5,7 +5,7 @@ call pathogen#helptags()
 
 syntax enable
 set t_Co=256
-set background=light
+set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 call togglebg#map("<F5>")
