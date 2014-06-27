@@ -1,6 +1,6 @@
 " pathogen addon manager (https://github.com/tpope/vim-pathogen)
 call pathogen#infect()
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
 syntax enable
