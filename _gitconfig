@@ -7,3 +7,4 @@
 	gist-oauth-token = 9ba165e
 [core]
 	excludesfile = /home/bijumon/.gitignore_global
+	editor = gvim -f
