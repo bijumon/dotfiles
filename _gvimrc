@@ -1,6 +1,6 @@
-set guifont=Source\ Code\ Pro\ 16
+set guiheadroom=0
+set guifont=Ubuntu\ Mono\ 13
 set guioptions=agim
 set guioptions-=T "remove toolbar
 set guioptions-=r "remove right-hand scroll bar
 set guioptions-=L "remove left-hand scroll bar. Fix for TagBar.
-
