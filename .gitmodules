@@ -1,0 +1,12 @@
+[submodule "vim/.vim"]
+	path = vim/.vim
+	url = https://github.com/tpope/vim-pathogen
+[submodule "pathogen-vim/.vim/bundle/vim-sensible"]
+	path = pathogen-vim/.vim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "pathogen-vim/.vim/bundle/vim-surround"]
+	path = pathogen-vim/.vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "pathogen-vim/.vim/bundle/vim-colors-solarized"]
+	path = pathogen-vim/.vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
