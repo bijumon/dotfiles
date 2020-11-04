@@ -12,4 +12,4 @@
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "emacs/.emacs.d"]
 	path = emacs/.emacs.d
-	url = https://github.com/bbatsov/prelude.git
+	url = https://github.com/bijumon/prelude.git
