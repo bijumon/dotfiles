@@ -10,6 +10,3 @@
 [submodule "pathogen-vim/.vim/bundle/vim-colors-solarized"]
 	path = pathogen-vim/.vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "emacs/.emacs.d"]
-	path = emacs/.emacs.d
-	url = https://github.com/bijumon/prelude.git
