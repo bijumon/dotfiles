@@ -26,7 +26,7 @@ dotfiles - requires [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Su
  - [tmux](https://github.com/tmux/tmux/wiki)
  - [Xresources](https://github.com/bijumon/dotfiles/blob/main/Xorg/.Xresources)
    * [rxvt-unicode](https://github.com/bijumon/dotfiles/blob/main/Xorg/.Xresources)
-   * [tilix](https://github.com/gnunn1/tilix/)
+ - [tilix](https://github.com/gnunn1/tilix/)
      ``` shell 
      % dconf dump /com/gexperts/Tilix/ > tilix/default-profile.dconf
      
