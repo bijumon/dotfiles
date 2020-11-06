@@ -17,12 +17,20 @@ dotfiles - requires [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Su
    * [save history without exit](https://superuser.com/questions/555310/bash-save-history-without-exit)
    * `λ` unicode prompt (U+03BB)
  - Emacs
-   * [Prelude](https://prelude.emacsredux.com/en/latest/)
+   * [doom-emacs - getting started](https://github.com/hlissner/doom-emacs/blob/develop/docs/getting_started.org)
  - Vim
-   * pathogen
-   * sensible
-   * surround
-   * solarized colors
- - tmux
- - Xresources
-   * urxvt
+   * [tpope/vim-pathogen: pathogen.vim: manage your runtimepath](https://github.com/tpope/vim-pathogen)
+   * [tpope/vim-sensible: sensible.vim: Defaults everyone can agree on](https://github.com/tpope/vim-sensible)
+   * [tpope/vim-surround: surround.vim: quoting/parenthesizing made simple](https://github.com/tpope/vim-surround)
+   * [altercation/vim-colors-solarized: precision colorscheme for the vim text editor](https://github.com/altercation/vim-colors-solarized)
+ - [tmux](https://github.com/tmux/tmux/wiki)
+ - [Xresources](https://github.com/bijumon/dotfiles/blob/main/Xorg/.Xresources)
+   * [rxvt-unicode](https://github.com/bijumon/dotfiles/blob/main/Xorg/.Xresources)
+   * [tilix](https://github.com/gnunn1/tilix/)
+     ``` shell 
+     % dconf dump /com/gexperts/Tilix/ > tilix/default-profile.dconf
+     
+     % dconf reset -f /com/gexperts/Terminix/
+     
+     % dconf load /com/gexperts/Tilix/ < tilix/default-profile.dconf
+     ```
