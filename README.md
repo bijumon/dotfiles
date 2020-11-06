@@ -10,11 +10,11 @@ dotfiles - requires [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Su
 ```
 
 - bash
- * [prompt with updating timer](https://redandblack.io/blog/2020/bash-prompt-with-updating-time/) via [Useful shell prompt | Lobste.rs](https://lobste.rs/s/s5jj3v/useful_shell_prompt)
- * [Taskwarrior](https://taskwarrior.org/docs/start.html)
- * bash_aliases
- * [save history without exit](https://superuser.com/questions/555310/bash-save-history-without-exit)
- * `λ` unicode prompt (U+03BB)
+  * [prompt with updating timer](https://redandblack.io/blog/2020/bash-prompt-with-updating-time/) via [Useful shell prompt | Lobste.rs](https://lobste.rs/s/s5jj3v/useful_shell_prompt)
+  * [Taskwarrior](https://taskwarrior.org/docs/start.html)
+  * bash_aliases
+  * [save history without exit](https://superuser.com/questions/555310/bash-save-history-without-exit)
+  * `λ` unicode prompt (U+03BB)
 - Emacs
  * [doom-emacs - getting started](https://github.com/hlissner/doom-emacs/blob/develop/docs/getting_started.org)
 - Vim
