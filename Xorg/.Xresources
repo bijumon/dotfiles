@@ -4,22 +4,24 @@ Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.autohint:  	true
-Xft.hintstyle:  hintslight
+! Xft.hintstyle:  hintslight
 
 ! set cursor
-Xcursor.theme: Oxygen_Black
-Xcursor.size: 16
+! Xcursor.theme: Oxygen_Black
+! Xcursor.size: 16
 
 !URxvt.depth: 32
 URxvt.saveLines:32767
 URxvt.scrollBar: false
 
-URxvt*font: xft:Droid Sans Mono:pixelsize=14
+URxvt*font: xft:Noto Mono:size=14
 
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: firefox
-URxvt.matcher.button: 2
-URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+! URxvt.perl-ext-common: default,matcher
+! URxvt.urlLauncher: firefox
+! URxvt.matcher.button: 2
+! URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
 URxvt*colorUL: #c5f779
 URxvt*underlineColor: #c5f779
