@@ -16,7 +16,7 @@ dotfiles - requires [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Su
   * [save history without exit](https://superuser.com/questions/555310/bash-save-history-without-exit)
   * `λ` unicode prompt (U+03BB)
 - Emacs
- * [doom-emacs - getting started](https://github.com/hlissner/doom-emacs/blob/develop/docs/getting_started.org)
+  * [doom-emacs - getting started](https://github.com/hlissner/doom-emacs/blob/develop/docs/getting_started.org)
 - Vim
   * [pathogen.vim: manage your runtimepath](https://github.com/tpope/vim-pathogen)
   * [sensible.vim: Defaults everyone can agree on](https://github.com/tpope/vim-sensible)
