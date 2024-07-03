@@ -1,4 +1,7 @@
 alias ls="/usr/bin/ls --color -Fhl"
+alias la="ls -a"
+alias lt='ls --human-readable --size -1 -S --classify'
+
 alias cp="cp -i"
 alias rm="rm -i"
 
@@ -32,3 +35,5 @@ alias bx="bundle exec"
 alias j="bundle exec jekyll"
 alias jc="bundle exec jekyll compose"
 
+alias vi=neovide
+alias vim=nvim

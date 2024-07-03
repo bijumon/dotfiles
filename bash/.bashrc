@@ -5,7 +5,7 @@
 [[ $- != *i* ]] && return
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
 export EDITOR="emacsclient -t"
@@ -33,7 +33,8 @@ colors() {
 			printf " ${seq0}TEXT\e[m"
 			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
 		done
-		echo; echo
+		echo
+		echo
 	done
 }
 
@@ -41,7 +42,7 @@ colors() {
 
 unset use_color safe_term match_lhs sh
 
-xhost +local:root > /dev/null 2>&1
+xhost +local:root >/dev/null 2>&1
 
 # complete -cf sudo
 
@@ -59,26 +60,25 @@ shopt -s histappend
 #
 # # ex - archive extractor
 # # usage: ex <file>
-ex ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+ex() {
+	if [ -f $1 ]; then
+		case $1 in
+		*.tar.bz2) tar xjf $1 ;;
+		*.tar.gz) tar xzf $1 ;;
+		*.bz2) bunzip2 $1 ;;
+		*.rar) unrar x $1 ;;
+		*.gz) gunzip $1 ;;
+		*.tar) tar xf $1 ;;
+		*.tbz2) tar xjf $1 ;;
+		*.tgz) tar xzf $1 ;;
+		*.zip) unzip $1 ;;
+		*.Z) uncompress $1 ;;
+		*.7z) 7z x $1 ;;
+		*) echo "'$1' cannot be extracted via ex()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
 }
 
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -106,43 +106,52 @@ TIMESTAMP="\A"
 TIMESTAMP_PLACEHOLDER="--:--"
 
 move_cursor_to_start_of_ps1() {
-    command_rows=$(history 1 | wc -l)
-    if [ "$command_rows" -gt 1 ]; then
-        let vertical_movement=$command_rows+1
-    else
-        command=$(history 1 | sed 's/^\s*[0-9]*\s*//')
-        command_length=${#command}
-        ps1_prompt_length=${#PS1_PROMPT}
-        let total_length=$command_length+$ps1_prompt_length
-        let lines=$total_length/${COLUMNS}+1
-        let vertical_movement=$lines+1
-    fi
-    tput cuu $vertical_movement
+	command_rows=$(history 1 | wc -l)
+	if [ "$command_rows" -gt 1 ]; then
+		let vertical_movement=$command_rows+1
+	else
+		command=$(history 1 | sed 's/^\s*[0-9]*\s*//')
+		command_length=${#command}
+		ps1_prompt_length=${#PS1_PROMPT}
+		let total_length=$command_length+$ps1_prompt_length
+		let lines=$total_length/${COLUMNS}+1
+		let vertical_movement=$lines+1
+	fi
+	tput cuu $vertical_movement
 }
 
 PS0_ELEMENTS=(
-    "$SAVE_CURSOR_POSITION" "\$(move_cursor_to_start_of_ps1)"
-    "$PROMPT_COLOUR" "$TIMESTAMP" "$NO_COLOUR" "$RESTORE_CURSOR_POSITION"
+	"$SAVE_CURSOR_POSITION" "\$(move_cursor_to_start_of_ps1)"
+	"$PROMPT_COLOUR" "$TIMESTAMP" "$NO_COLOUR" "$RESTORE_CURSOR_POSITION"
 )
-PS0=$(IFS=; echo "${PS0_ELEMENTS[*]}")
+PS0=$(
+	IFS=
+	echo "${PS0_ELEMENTS[*]}"
+)
 
 PS1_ELEMENTS=(
-    # Empty line after last command.
-    "$NEWLINE"
-    # First line of prompt.
-    "$PRINTING_OFF" "$PROMPT_COLOUR" "$PRINTING_ON"
-    "$TIMESTAMP_PLACEHOLDER" "$DOUBLE_SPACE" "$DIRECTORY" "$PRINTING_OFF"
-    "$NO_COLOUR" "$PRINTING_ON" "$NEWLINE"
-    # Second line of prompt.
-    "$PRINTING_OFF" "$PROMPT_COLOUR" "$PRINTING_ON" "$PS1_PROMPT"
-    "$SINGLE_SPACE" "$PRINTING_OFF" "$NO_COLOUR" "$PRINTING_ON"
+	# Empty line after last command.
+	"$NEWLINE"
+	# First line of prompt.
+	"$PRINTING_OFF" "$PROMPT_COLOUR" "$PRINTING_ON"
+	"$TIMESTAMP_PLACEHOLDER" "$DOUBLE_SPACE" "$DIRECTORY" "$PRINTING_OFF"
+	"$NO_COLOUR" "$PRINTING_ON" "$NEWLINE"
+	# Second line of prompt.
+	"$PRINTING_OFF" "$PROMPT_COLOUR" "$PRINTING_ON" "$PS1_PROMPT"
+	"$SINGLE_SPACE" "$PRINTING_OFF" "$NO_COLOUR" "$PRINTING_ON"
 )
-PS1=$(IFS=; echo "${PS1_ELEMENTS[*]}")
+PS1=$(
+	IFS=
+	echo "${PS1_ELEMENTS[*]}"
+)
 
 PS2_ELEMENTS=(
-    "$PRINTING_OFF" "$PROMPT_COLOUR" "$PRINTING_ON" "$PS2_PROMPT"
-    "$SINGLE_SPACE" "$PRINTING_OFF" "$NO_COLOUR" "$PRINTING_ON"
+	"$PRINTING_OFF" "$PROMPT_COLOUR" "$PRINTING_ON" "$PS2_PROMPT"
+	"$SINGLE_SPACE" "$PRINTING_OFF" "$NO_COLOUR" "$PRINTING_ON"
 )
-PS2=$(IFS=; echo "${PS2_ELEMENTS[*]}")
+PS2=$(
+	IFS=
+	echo "${PS2_ELEMENTS[*]}"
+)
 
 shopt -s histverify
