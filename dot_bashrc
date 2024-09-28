@@ -1,0 +1,21 @@
+# ~/.bashrc
+
+[[ $- != *i* ]] && return
+
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+
+# Enable history appending instead of overwriting.  #139609
+shopt -s histappend
+
+# starship prompt
+eval "$(starship init bash)"
+
+export EDITOR="nvim"
+
+unset command_not_found_handle
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
