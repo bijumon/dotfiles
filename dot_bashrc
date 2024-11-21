@@ -12,10 +12,10 @@ fi
 shopt -s histappend
 
 # starship prompt
-eval "$(starship init bash)"
+if [[ -x /usr/bin/starship && -e ~/.config/starship.toml ]]; then
+  eval "$(starship init bash)"
+fi
 
 export EDITOR="nvim"
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
-unset command_not_found_handle
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
