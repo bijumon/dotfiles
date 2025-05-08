@@ -16,6 +16,8 @@ if [[ -x /usr/bin/starship && -e ~/.config/starship.toml ]]; then
   eval "$(starship init bash)"
 fi
 
+export PATH=$PATH:/home/bj/.cargo/bin:/home/bj/llama-b5174/
+
 export EDITOR="nvim"
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
