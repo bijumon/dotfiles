@@ -21,5 +21,8 @@ export PATH=$PATH:/home/bj/.cargo/bin:/home/bj/llama-b5174/
 export EDITOR="nvim"
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
+# fork neovide and return to shell
+export NEOVIDE_FORK=1
+
 [ -r ~/.local/bin/env ] && source ~/.local/bin/env
 
