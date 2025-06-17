@@ -11,13 +11,7 @@ fi
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
-# starship prompt
-if [[ -x /usr/bin/starship && -e ~/.config/starship.toml ]]; then
-  eval "$(starship init bash)"
-fi
-
 export PATH=$PATH:/home/bj/.cargo/bin:/home/bj/llama-b5174/
-
 export EDITOR="nvim"
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
@@ -25,4 +19,9 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 export NEOVIDE_FORK=1
 
 [ -r ~/.local/bin/env ] && source ~/.local/bin/env
+
+# starship prompt
+if command -V starship >/dev/null; then
+  eval "$(starship init bash)"
+fi
 
