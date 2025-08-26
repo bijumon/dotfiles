@@ -11,17 +11,24 @@ fi
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
-export PATH=$PATH:/home/bj/.cargo/bin:/home/bj/llama-b5174/
+# starship prompt
+if [[ -x /usr/bin/starship && -e ~/.config/starship.toml ]]; then
+  eval "$(starship init bash)"
+fi
+
+export PATH=$PATH:/home/bj/.cargo/bin
+
 export EDITOR="nvim"
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 # fork neovide and return to shell
 export NEOVIDE_FORK=1
 
-[ -r ~/.local/bin/env ] && source ~/.local/bin/env
+# npm global-install to a user-writable dir
+npm config set prefix "$HOME/.npm-global"
+export PATH="$HOME/.npm-global/bin:$PATH"
 
-# starship prompt
-if command -V starship >/dev/null; then
-  eval "$(starship init bash)"
-fi
+# ollama
+export PATH="/home/work/ollama/bin:$PATH"
+export LD_LIBRARY_PATH="/home/work/ollama/lib:$LD_LIBRARY_PATH"
 
