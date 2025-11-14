@@ -19,7 +19,14 @@ fi
 export PATH=$PATH:/home/bj/.cargo/bin
 
 export EDITOR="nvim"
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
+if [ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]; then
+  # "Running in WSL."
+  eval "$(/usr/sbin/wsl2-ssh-agent)"
+else
+  # "Not running in WSL."
+  export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+fi
 
 # fork neovide and return to shell
 export NEOVIDE_FORK=1
@@ -31,4 +38,3 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 # ollama
 export PATH="/home/work/ollama/bin:$PATH"
 export LD_LIBRARY_PATH="/home/work/ollama/lib:$LD_LIBRARY_PATH"
-
