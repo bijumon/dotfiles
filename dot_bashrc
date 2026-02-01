@@ -38,3 +38,6 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 # ollama
 export PATH="/home/work/ollama/bin:$PATH"
 export LD_LIBRARY_PATH="/home/work/ollama/lib:$LD_LIBRARY_PATH"
+
+# mise
+eval "$(/home/bj/.local/bin/mise activate bash)"
