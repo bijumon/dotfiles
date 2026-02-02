@@ -40,3 +40,4 @@ alias vim=nvim
 
 alias dnf="sudo dnf"
 
+lazyui() { NVIM_APPNAME="lazyvim" neovide "$@"; }
