@@ -8,7 +8,7 @@ fi
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
-# Enable history appending instead of overwriting.  #139609
+# Enable history appending instead of overwriting
 shopt -s histappend
 
 # starship prompt
@@ -16,20 +16,21 @@ if [[ -x /usr/bin/starship && -e ~/.config/starship.toml ]]; then
   eval "$(starship init bash)"
 fi
 
-source "$HOME/.cargo/env"
-export PATH=$PATH:/home/bj/.cargo/bin:/home/bj/.local/bin
+export EDITOR="featherpad"
 
-export EDITOR="nvim"
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
-
-# fork neovide and return to shell
-export NEOVIDE_FORK=1
+# start using keychain
+#
+# chezmoi template for linux, wsl2 etc
+# 
+#export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 # npm global-install to a user-writable dir
-npm config set prefix "$HOME/.npm-global"
-export PATH="$HOME/.npm-global/bin:$PATH"
+#npm config set prefix "$HOME/.npm-global"
+#export PATH="$HOME/.npm-global/bin:$PATH"
 
 # ollama
-export PATH="$PATH:/home/bj/ollama-rocm/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/bj/ollama-rocm/lib"
-eval "$(/home/bj/.local/bin/mise activate bash)"
+#export PATH="$PATH:/home/bj/ollama-rocm/bin"
+#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/bj/ollama-rocm/lib"
+#eval "$(/home/bj/.local/bin/mise activate bash)"
+
+export PATH=$HOME/bin:$PATH
